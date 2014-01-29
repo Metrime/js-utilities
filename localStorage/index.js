@@ -1,20 +1,26 @@
-var store = {
-	get:function(name){
-		var result = localStorage.getItem(name);
-		return result!=null ? JSON.parse(result) : [];
-	},
-	save:function(name,data){
-		localStorage.setItem(name,JSON.stringify(data));
-	},
-	add:function(name,data){
-		var result = store.get(name);
-		result.unshift(data);
-		store.save(name,result);
-	},
-	remove:function(name){
-		localStorage.removeItem(name);
-	},
-	clear:function(){
-		localStorage.clear();
+var store = new function(){
+	var s = this,
+		l = localStorage;
+
+	s.type = function(type){
+		l = window[type+"Storage"];
+	}
+
+	s.get = function(name){
+		return JSON.parse(l.getItem(name)) || [];
+	}
+
+	s.set = function(name,data){
+		l.setItem(name,JSON.stringify(data));
+	}
+
+	s.add = function(name,data){
+		var newDoc = s.get(name);
+		newDoc.unshift(data);
+		s.set(name,newDoc);
+	}
+
+	s.remove = function(name){
+		l.removeItem(name);
 	}
 }
