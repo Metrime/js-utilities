@@ -34,7 +34,7 @@ t.start({
 
 			t.check( qs('.one').id === 'aaa' )
 			t.check( qs('.one').getAttribute('data-id') === 'bbb' )
-			t.check( qs('li').innerText === 'ccc' )
+			t.check( $('li').get('text') === 'ccc' )
 			t.done()
 		},
 	'.add()':

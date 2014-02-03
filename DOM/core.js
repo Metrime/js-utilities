@@ -13,7 +13,7 @@ function $(selector){
 
 	this.shortcuts = function(a){
 		if 			(a==="html")	{ a="innerHTML" }
-		else if 	(a==="text")	{ a="innerText" }
+		else if 	(a==="text")	{ a=Element.prototype.innerText != undefined ? "innerText" : "textContent" }
 		else if 	(a==="class")	{ a="className" }
 		return a;
 	}
