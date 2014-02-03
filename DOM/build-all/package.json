@@ -1,6 +1,8 @@
 {
 	"dependencies":{
 		"gulp":"",
-		"gulp-concat":""
+		"gulp-concat":"",
+		"gulp-footer":"",
+		"gulp-uglify":""
 	}
 }
