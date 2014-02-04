@@ -1,6 +1,4 @@
-// doT.js
-// 2011, Laura Doktorova, https://github.com/olado/doT
-// Licensed under the MIT license.
+require('utils/templating/core')
 
 (function() {
 	"use strict";
@@ -20,14 +18,10 @@
 		compile:  undefined  //fn, for express
 	}, global;
 
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = doT;
-	} else if (typeof define === 'function' && define.amd) {
-		define(function(){return doT;});
-	} else {
-		global = (function(){ return this || (0,eval)('this'); }());
-		global.doT = doT;
-	}
+	
+	global = (function(){ return this || (0,eval)('this'); }());
+	global._.t.dot = doT;
+
 
 	function encodeHTMLSource() {
 		var encodeHTMLRules = { "&": "&#38;", "<": "&#60;", ">": "&#62;", '"': '&#34;', "'": '&#39;', "/": '&#47;' },

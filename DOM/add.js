@@ -1,4 +1,8 @@
-$$.add = function(a,b){
+require('DOM/core')
+require('DOM/has')
+require('DOM/set')
+
+$.prototype.add = function(a,b){
 	if(!this.el) return;
 	var s = $(this.el);
 

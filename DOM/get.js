@@ -1,4 +1,6 @@
-$$.get = function(a){
+require('DOM/core')
+
+$.prototype.get = function(a){
 	var s = this.el;
 	if(!s) return;
 

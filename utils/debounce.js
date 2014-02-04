@@ -1,4 +1,6 @@
-var debounce = function (a, b, c) {
+require('utils/core')
+
+_.debounce = function (a, b, c) {
     var d;
     return function () {
         var e = this,

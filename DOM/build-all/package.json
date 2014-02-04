@@ -3,6 +3,7 @@
 		"gulp":"",
 		"gulp-concat":"",
 		"gulp-footer":"",
-		"gulp-uglify":""
+		"gulp-uglify":"",
+		"gulp-replace":""
 	}
 }

@@ -1,9 +1,11 @@
-$$.on = function(a,cb){
+require('DOM/core')
+
+$.prototype.on = function(a,cb){
 	this.el.addEventListener(a,cb,false);
 	return this;
 }
 
-$$.off = function(a,b){
+$.prototype.off = function(a,b){
 	this.el.removeEventListener(a,b,false);
 	return this;
 }

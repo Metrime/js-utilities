@@ -1,4 +1,6 @@
-$$.find = function(a){
+require('DOM/core')
+
+$.prototype.find = function(a){
 	var s = this.el;
 	if(!s) return;
 

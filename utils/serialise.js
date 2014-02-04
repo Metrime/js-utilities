@@ -1,3 +1,5 @@
+require('utils/core')
+
 _.serialise = function(obj){
   var serialised = '';
   for (key in obj){

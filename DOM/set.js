@@ -1,4 +1,6 @@
-$$.set = function(a,c){
+require('DOM/core')
+
+$.prototype.set = function(a,c){
 	var s = this.el;
 	if(!s) return;
 

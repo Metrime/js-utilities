@@ -1,10 +1,8 @@
-var store = new function(){
+require('utils/store/core')
+
+_.store.local = new function(){
 	var s = this,
 		l = localStorage;
-
-	s.type = function(type){
-		l = window[type+"Storage"];
-	}
 
 	s.get = function(name){
 		return JSON.parse(l.getItem(name)) || [];
@@ -23,4 +21,4 @@ var store = new function(){
 	s.remove = function(name){
 		l.removeItem(name);
 	}
-}
+};

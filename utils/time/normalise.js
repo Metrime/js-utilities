@@ -1,3 +1,5 @@
+require('utils/time/normalise')
+
 _.time.normalise = function(date){
 	date = date ? date : new Date();
 

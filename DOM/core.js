@@ -20,5 +20,3 @@ function $(selector){
 
 	return this;
 };
-
-var $$ = $.prototype;

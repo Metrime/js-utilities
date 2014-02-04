@@ -1,4 +1,6 @@
-$$.parent = function(a){
+require('DOM/core')
+
+$.prototype.parent = function(a){
 	var s = this.el;
 	if(!s) return;
 
