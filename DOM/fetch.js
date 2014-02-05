@@ -1,5 +1,5 @@
-require('DOM/core')
 require('DOM/get')
+require('utils/ajax')
 
 $.prototype.fetch = function(cb){
 	var s = this.el;
