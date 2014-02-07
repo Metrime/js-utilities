@@ -1,6 +1,4 @@
-require('utils/store/core')
-
-_.store.local = new function(){
+_store = new function(){
 	var s = this,
 		l = localStorage;
 

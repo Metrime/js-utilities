@@ -1,6 +1,4 @@
-require('utils/core')
-
-_.router = new function(){
+_router = new function(){
 
   var s = this;
 

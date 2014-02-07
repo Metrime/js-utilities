@@ -1,14 +1,15 @@
 require('DOM/core')
 
-$.prototype.get = function(a){
+dom.get = function(a){
 	var s = this.el;
-	if(!s) return;
 
-	if(typeof a==="number") return $(s[a]);
+	if(typeof a=="number") return $([s[a]]);
 
 	a = this.shortcuts(a);
 
-	if(s[a] != undefined){ return s[a] }
-	else if(s.getAttribute(a)){ return s.getAttribute(a) }
-	else{ return null }
+	var map = s.map(function(el){
+		return el[a] != undefined ? el[a] : el.getAttribute(a);
+	});
+
+	return map.length > 1 ? map : map[0];
 }

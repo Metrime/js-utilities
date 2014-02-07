@@ -1,15 +1,11 @@
-function $(selector){
-	if(this === window) return new $(selector);
+require('utils/toArray')
+require('utils/flatten')
 
-	if(typeof selector === "object"){
-		if(selector.length){
-			this.el = document.querySelectorAll(selector);
-		}else{
-			this.el = selector;
-		}
-	}else{
-		this.el = document.querySelector(selector);
-	}
+function $(){
+	var sel = arguments;
+	if(this === window) return new $(sel);
+	
+	this.el = selector(_toArray(sel[0]))
 
 	this.shortcuts = function(a){
 		if 			(a==="html")	{ a="innerHTML" }
@@ -18,5 +14,19 @@ function $(selector){
 		return a;
 	}
 
-	return this;
+	return;
 };
+
+function selector(els,doc){
+	return _flatten(
+		els.map(function(el){
+			return typeof el == 'string' 
+			? (/\*/.test(el) ? _toArray((doc||document).querySelectorAll(el.split('*')[1])) : (doc||document).querySelector(el)) 
+			: el;
+		})
+	).filter(function(el){
+		return el != null && !(el instanceof NodeList);
+	});
+}
+
+var dom = $.prototype;

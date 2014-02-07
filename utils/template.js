@@ -1,5 +1,3 @@
-require('utils/templating/core')
-
 (function() {
 	"use strict";
 
@@ -20,7 +18,7 @@ require('utils/templating/core')
 
 	
 	global = (function(){ return this || (0,eval)('this'); }());
-	global._.t.dot = doT;
+	global._template = doT;
 
 
 	function encodeHTMLSource() {

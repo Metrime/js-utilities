@@ -1,6 +1,4 @@
-require('utils/store/core')
-
-_.store.session = new function(){
+_session = new function(){
 	var s = this,
 		l = sessionStorage;
 

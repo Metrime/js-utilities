@@ -1,9 +1,0 @@
-{
-	"dependencies":{
-		"gulp":"",
-		"gulp-concat":"",
-		"gulp-footer":"",
-		"gulp-uglify":"",
-		"gulp-replace":""
-	}
-}

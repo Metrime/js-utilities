@@ -1,11 +1,15 @@
 require('DOM/core')
 
-$.prototype.on = function(a,cb){
-	this.el.addEventListener(a,cb,false);
+dom.on = function(a,cb){
+	this.el.forEach(function(b){
+		b.addEventListener(a,cb,false);
+	})
 	return this;
 }
 
-$.prototype.off = function(a,b){
-	this.el.removeEventListener(a,b,false);
+dom.off = function(a,b){
+	this.el.forEach(function(b){
+		b.removeEventListener(a,cb,false);
+	})
 	return this;
 }

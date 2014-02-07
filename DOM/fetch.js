@@ -1,15 +1,15 @@
-require('DOM/get')
-require('utils/ajax')
+// require('DOM/get')
+// require('utils/ajax')
 
-$.prototype.fetch = function(cb){
-	var s = this.el;
-	if(!s || !$(s).get('data-fetch')) return;
-	if(spinner != undefined) spinner.show(s);
-	new ajax($(s).get('data-fetch'),function(res){
-		if(spinner != undefined){
-			spinner.hide(function(){ cb && cb(res,$(s)); });
-		}else{
-			cb && cb(res,$(s));
-		}
-	});
-};
+// $.prototype.fetch = function(cb){
+// 	var s = this.el;
+// 	if(!s || !$(s).get('data-fetch')) return;
+// 	if(spinner != undefined) spinner.show(s);
+// 	new ajax($(s).get('data-fetch'),function(res){
+// 		if(spinner != undefined){
+// 			spinner.hide(function(){ cb && cb(res,$(s)); });
+// 		}else{
+// 			cb && cb(res,$(s));
+// 		}
+// 	});
+// };

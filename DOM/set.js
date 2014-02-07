@@ -1,13 +1,13 @@
 require('DOM/core')
 
-$.prototype.set = function(a,c){
+dom.set = function(a,c){
 	var s = this.el;
-	if(!s) return;
 
 	a = this.shortcuts(a);
 
-	s[a] != undefined ? s[a] = c
-	: s.setAttribute(a,c);
+	s.forEach(function(el){
+		el[a] != undefined ? el[a] = c : el.setAttribute(a,c);
+	});
 
 	return this;
 }

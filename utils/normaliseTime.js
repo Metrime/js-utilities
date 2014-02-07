@@ -1,6 +1,4 @@
-require('utils/time/normalise')
-
-_.time.normalise = function(date){
+_normaliseTime = function(date){
 	date = date ? date : new Date();
 
 	function fix(number){

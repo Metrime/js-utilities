@@ -1,6 +1,4 @@
-require('utils/core')
-
-_.serialise = function(obj){
+_serialise = function(obj){
   var serialised = '';
   for (key in obj){
     serialised += '&'+key+'='+obj[key];
