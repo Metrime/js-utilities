@@ -1,5 +1,6 @@
 require('utils/toArray')
 require('utils/flatten')
+require('utils/unique')
 
 function $(){
 	var sel = arguments;
@@ -18,15 +19,17 @@ function $(){
 };
 
 function selector(els,doc){
-	return _flatten(
-		els.map(function(el){
-			return typeof el == 'string' 
-			? (/\*/.test(el) ? _toArray((doc||document).querySelectorAll(el.split('*')[1])) : (doc||document).querySelector(el)) 
-			: el;
+	return _unique(
+		_flatten(
+			els.map(function(el){
+				return typeof el == 'string' 
+				? (/\*/.test(el) ? _toArray((doc||document).querySelectorAll(el.split('*')[1])) : (doc||document).querySelector(el)) 
+				: el;
+			})
+		).filter(function(el){
+			return el != null && !(el instanceof NodeList);
 		})
-	).filter(function(el){
-		return el != null && !(el instanceof NodeList);
-	});
+	);
 }
 
 var dom = $.prototype;
